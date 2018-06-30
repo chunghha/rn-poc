@@ -42,7 +42,7 @@ export class Hello extends React.Component<Props, State> {
                             title="-"
                             onPress={this.onDecrement}
                             accessibilityLabel="decrement"
-                            color="red"
+                            color="#ff9018"
                         />
                     </View>
 
@@ -51,7 +51,7 @@ export class Hello extends React.Component<Props, State> {
                             title="+"
                             onPress={this.onIncrement}
                             accessibilityLabel="increment"
-                            color="blue"
+                            color="#1890ff"
                         />
                     </View>
                 </View>
@@ -72,14 +72,14 @@ const styles = StyleSheet.create({
         minHeight: 70,
         alignItems: "stretch",
         alignSelf: "center",
-        borderWidth: 5
+        borderWidth: 1
     },
     button: {
         flex: 1,
         paddingVertical: 0
     },
     greeting: {
-        color: "#999",
+        color: "#222",
         fontWeight: "bold"
     }
 })
