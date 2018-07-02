@@ -1,5 +1,6 @@
 import React from "react"
-import { Button, StyleSheet, Text, View } from "react-native"
+import { StyleSheet, Text, View } from "react-native"
+import { Button, Badge, WhiteSpace } from 'antd-mobile-rn'
 
 export interface Props {
     name: string
@@ -33,26 +34,26 @@ export class Hello extends React.Component<Props, State> {
         return (
             <View style={styles.root}>
                 <Text style={styles.greeting}>
-                    Hello {this.props.name + this.getExclamationMarks(this.state.enthusiasmLevel)}
+                    Hello {this.props.name}
                 </Text>
-
+                <WhiteSpace />
+                <Badge size='large' text={this.getExclamationMarks(this.state.enthusiasmLevel)} />
+                <WhiteSpace />
+                <WhiteSpace />
                 <View style={styles.buttons}>
                     <View style={styles.button}>
                         <Button
-                            title="-"
-                            onPress={this.onDecrement}
+                            onClick={this.onDecrement}
                             accessibilityLabel="decrement"
-                            color="#ff9018"
-                        />
+                        >-</Button>
                     </View>
 
                     <View style={styles.button}>
                         <Button
-                            title="+"
-                            onPress={this.onIncrement}
+                            onClick={this.onIncrement}
                             accessibilityLabel="increment"
-                            color="#1890ff"
-                        />
+                            type="primary"
+                        >+</Button>
                     </View>
                 </View>
             </View>
@@ -72,7 +73,7 @@ const styles = StyleSheet.create({
         minHeight: 70,
         alignItems: "stretch",
         alignSelf: "center",
-        borderWidth: 1
+        borderWidth: 0
     },
     button: {
         flex: 1,
